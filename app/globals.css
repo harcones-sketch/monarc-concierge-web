@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #C8A86E;
+  --gold-2: #B8965A;
+  --dark: #080808;
+  --dark-2: #0D0D0D;
+  --dark-3: #111111;
+  --cream: #F5F2EC;
+  --muted: #888888;
+  --border: rgba(200, 168, 110, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080808;
+  color: #F5F2EC;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(200, 168, 110, 0.4);
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(200, 168, 110, 0.7);
+}
+
+/* Text selection */
+::selection {
+  background-color: rgba(200, 168, 110, 0.3);
+  color: #F5F2EC;
+}
+
+::-moz-selection {
+  background-color: rgba(200, 168, 110, 0.3);
+  color: #F5F2EC;
+}
+
+/* Gold border utility */
+.border-gold-subtle {
+  border-color: rgba(200, 168, 110, 0.12);
+}
+
+.border-gold-hover {
+  border-color: rgba(200, 168, 110, 0.35);
+}
+
+/* Gradient text */
+.text-gradient-gold {
+  background: linear-gradient(135deg, #C8A86E 0%, #F5E6C8 50%, #B8965A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section spacing */
+.section-padding {
+  padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+/* Cinzel display class */
+.font-display {
+  font-family: var(--font-cinzel), serif;
+}
+
+.font-serif {
+  font-family: var(--font-cormorant), Georgia, serif;
+}
