@@ -1,0 +1,26 @@
+<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+  <!-- Fondo oscuro -->
+  <rect width="32" height="32" rx="6" fill="#1A1A1C"/>
+  <!-- Corona -->
+  <g opacity="0.95">
+    <!-- Base corona -->
+    <rect x="7" y="11" width="18" height="1.5" rx="0.4" fill="#C8A86E"/>
+    <!-- Punta izquierda -->
+    <polygon points="7,11 9.5,6 12,11" fill="#C8A86E"/>
+    <!-- Punta central -->
+    <polygon points="13.5,11 16,4.5 18.5,11" fill="#C8A86E"/>
+    <!-- Punta derecha -->
+    <polygon points="20,11 22.5,6 25,11" fill="#C8A86E"/>
+    <!-- Bolitas -->
+    <circle cx="9.5" cy="5.6" r="1.1" fill="#C8A86E"/>
+    <circle cx="16" cy="3.9" r="1.1" fill="#C8A86E"/>
+    <circle cx="22.5" cy="5.6" r="1.1" fill="#C8A86E"/>
+  </g>
+  <!-- M -->
+  <text x="16" y="28"
+    text-anchor="middle"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="17"
+    font-weight="700"
+    fill="#C8A86E">M</text>
+</svg>
