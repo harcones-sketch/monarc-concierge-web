@@ -18,15 +18,15 @@ export default function Hero() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     const ctx = gsap.context(() => {
-      // Parallax: la imagen sube más despacio que el scroll → efecto profundidad
+      // Parallax pronunciado — la imagen se queda atrás mientras scrolleas
       gsap.to(bgRef.current, {
-        yPercent: 25,
+        yPercent: 45,
         ease: 'none',
         scrollTrigger: {
-          trigger: bgRef.current,
+          trigger: document.documentElement,
           start: 'top top',
-          end: 'bottom top',
-          scrub: true,
+          end: '100vh top',
+          scrub: 0.5,
         },
       })
 
@@ -97,9 +97,9 @@ export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen overflow-hidden flex flex-col">
       {/* Background image con parallax */}
-      <div ref={bgRef} className="absolute inset-0 z-0 scale-[1.3]">
+      <div ref={bgRef} className="absolute inset-0 z-0 scale-[1.5]">
         <Image
-          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80"
+          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=3840&q=100"
           alt="Luxury villa infinity pool"
           fill
           priority
