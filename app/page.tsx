@@ -1,6 +1,7 @@
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
 import Hero from '@/components/sections/Hero'
+import VideoReel from '@/components/sections/VideoReel'
 import Services from '@/components/sections/Services'
 import About from '@/components/sections/About'
 import Experiences from '@/components/sections/Experiences'
@@ -16,6 +17,7 @@ export default function Home() {
         <section id="home">
           <Hero />
         </section>
+        <VideoReel />
         <section id="services">
           <Services />
         </section>
