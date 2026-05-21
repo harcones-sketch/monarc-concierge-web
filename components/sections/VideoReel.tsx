@@ -115,7 +115,7 @@ export default function VideoReel() {
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover"
-          src="https://videos.pexels.com/video-files/2169880/2169880-uhd_3840_2160_25fps.mp4"
+          src="/video/monarc-reel.mp4"
           muted
           playsInline
           preload="auto"
