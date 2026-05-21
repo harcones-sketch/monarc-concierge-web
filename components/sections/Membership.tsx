@@ -151,14 +151,19 @@ export default function Membership() {
                 ))}
               </ul>
 
-              <button className={cn(
-                'w-full py-4 text-[11px] tracking-[3px] uppercase transition-all duration-300',
-                tier.featured
-                  ? 'bg-[#C8A86E] text-[#080808] hover:bg-[#B8965A]'
-                  : 'border border-[#C8A86E]/30 text-[#C8A86E] hover:border-[#C8A86E] hover:bg-[#C8A86E]/5'
-              )}>
+              <a
+                href={`https://wa.me/34600000000?text=${encodeURIComponent(`Hola, me interesa la membresía ${tier.name} de MONARC Concierge. ¿Podéis darme más información?`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  'w-full py-4 text-[11px] tracking-[3px] uppercase transition-all duration-300 text-center block',
+                  tier.featured
+                    ? 'bg-[#C8A86E] text-[#080808] hover:bg-[#B8965A]'
+                    : 'border border-[#C8A86E]/30 text-[#C8A86E] hover:border-[#C8A86E] hover:bg-[#C8A86E]/5'
+                )}
+              >
                 {tier.cta}
-              </button>
+              </a>
             </div>
           ))}
         </div>

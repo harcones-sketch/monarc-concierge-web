@@ -84,25 +84,25 @@ export default function Partners() {
       <div className="w-full h-px bg-[#C8A86E]/20 mb-14" />
 
       {/* Fila 1 */}
-      <div ref={row1Ref} className="flex items-center gap-12 mb-8 px-8 whitespace-nowrap">
+      <div ref={row1Ref} className="flex items-center gap-8 mb-6 px-8 whitespace-nowrap">
         {[...row1, ...row1].map((name, i) => (
-          <div key={`r1-${i}`} className="flex items-center gap-12 flex-shrink-0">
-            <span className="font-display text-xl md:text-2xl text-[#C8A86E]/70 tracking-widest uppercase hover:text-[#C8A86E] transition-colors duration-300 cursor-default">
+          <div key={`r1-${i}`} className="flex items-center gap-8 flex-shrink-0">
+            <span className="font-sans text-[11px] tracking-[4px] text-[#C8A86E]/80 uppercase hover:text-[#C8A86E] transition-colors duration-300 cursor-default font-light">
               {name}
             </span>
-            <span className="text-[#C8A86E]/20 text-lg">·</span>
+            <span className="text-[#C8A86E]/25 text-xs">◆</span>
           </div>
         ))}
       </div>
 
       {/* Fila 2 */}
-      <div ref={row2Ref} className="flex items-center gap-12 px-8 whitespace-nowrap">
+      <div ref={row2Ref} className="flex items-center gap-8 px-8 whitespace-nowrap">
         {[...row2, ...row2].map((name, i) => (
-          <div key={`r2-${i}`} className="flex items-center gap-12 flex-shrink-0">
-            <span className="font-display text-xl md:text-2xl text-[#F5F2EC]/50 tracking-widest uppercase hover:text-[#F5F2EC] transition-colors duration-300 cursor-default">
+          <div key={`r2-${i}`} className="flex items-center gap-8 flex-shrink-0">
+            <span className="font-sans text-[11px] tracking-[4px] text-[#F5F2EC]/60 uppercase hover:text-[#F5F2EC] transition-colors duration-300 cursor-default font-light">
               {name}
             </span>
-            <span className="text-[#C8A86E]/20 text-lg">·</span>
+            <span className="text-[#C8A86E]/25 text-xs">◆</span>
           </div>
         ))}
       </div>
