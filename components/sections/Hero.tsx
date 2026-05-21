@@ -99,8 +99,8 @@ export default function Hero() {
       {/* Background image con parallax */}
       <div ref={bgRef} className="absolute inset-0 z-0 scale-[1.3]">
         <Image
-          src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
-          alt="Luxury lifestyle"
+          src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1920&q=80"
+          alt="Luxury villa infinity pool"
           fill
           priority
           className="object-cover object-center"
