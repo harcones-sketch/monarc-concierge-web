@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
-const stats = [
-  { value: 500, suffix: '+', label: 'Clientes satisfechos' },
-  { value: 15, suffix: '+', label: 'Destinos activos' },
-  { value: 24, suffix: '/7', label: 'Disponibilidad' },
+const pillars = [
+  { icon: '⬛', label: 'Discreción Total', desc: 'Confidencialidad absoluta en cada gestión' },
+  { icon: '◇', label: 'Acceso Ilimitado', desc: 'Puertas que no existen para otros' },
+  { icon: '○', label: 'Disponibilidad 24/7', desc: 'Siempre disponibles, sin excepción' },
 ]
 
 const values = [
@@ -136,7 +136,7 @@ export default function About() {
             {/* Image */}
             <div className="relative h-[420px] lg:h-[520px] overflow-hidden rounded-sm">
               <Image
-                src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=800&q=80"
+                src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80"
                 alt="Luxury concierge service"
                 fill
                 className="object-cover object-center"
@@ -147,24 +147,19 @@ export default function About() {
               <div className="absolute top-4 right-4 bottom-4 left-4 border border-gold/15 rounded-sm pointer-events-none" />
             </div>
 
-            {/* Stats */}
+            {/* Pillars */}
             <div ref={statsRef} className="grid grid-cols-3 gap-4">
-              {stats.map((stat) => (
+              {pillars.map((p) => (
                 <div
-                  key={stat.label}
-                  className="text-center p-6 bg-[#0D0D0D] border border-[rgba(200,168,110,0.08)] rounded-sm"
+                  key={p.label}
+                  className="text-center p-6 bg-[#0D0D0D] border border-[rgba(200,168,110,0.08)] rounded-sm group hover:border-[rgba(200,168,110,0.25)] transition-colors duration-500"
                 >
-                  <div className="font-display text-3xl text-gold mb-2 flex items-baseline justify-center gap-0.5">
-                    <span
-                      className="stat-number"
-                      data-target={stat.value}
-                    >
-                      {stat.value === 24 ? '24' : '0'}
-                    </span>
-                    <span className="text-lg">{stat.suffix}</span>
-                  </div>
-                  <p className="text-[10px] tracking-[2px] uppercase text-muted font-sans">
-                    {stat.label}
+                  <div className="font-display text-2xl text-gold mb-3">{p.icon}</div>
+                  <p className="text-[10px] tracking-[2px] uppercase text-[#C8A86E] font-sans mb-2">
+                    {p.label}
+                  </p>
+                  <p className="text-[10px] text-[#555] font-sans leading-relaxed hidden sm:block">
+                    {p.desc}
                   </p>
                 </div>
               ))}

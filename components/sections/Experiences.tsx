@@ -6,42 +6,42 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ArrowRight } from 'lucide-react'
 
-const destinations = [
+const experiences = [
   {
-    name: 'Ibiza',
-    subtitle: 'La Isla Blanca',
-    image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
-    tag: 'Nightlife · Villas · Yachts',
+    name: 'Jets Privados',
+    subtitle: 'Vuela en tus términos',
+    image: 'https://images.unsplash.com/photo-1540962351504-03099e0a754b?w=800&q=80',
+    tag: 'Aviación Privada',
   },
   {
-    name: 'Monaco',
-    subtitle: 'La Capital del Lujo',
-    image: 'https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800&q=80',
-    tag: 'Grand Prix · Casinos · Yachts',
+    name: 'Hoteles de Lujo',
+    subtitle: 'Alojamiento sin igual',
+    image: 'https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&q=80',
+    tag: 'Hospitality Premium',
   },
   {
-    name: 'Dubai',
-    subtitle: 'El Futuro del Lujo',
-    image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80',
-    tag: 'Jets · Hoteles · Eventos',
+    name: 'Supercoches',
+    subtitle: 'Conduce lo extraordinario',
+    image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80',
+    tag: 'Luxury Cars',
   },
   {
-    name: 'Mykonos',
-    subtitle: 'La Perla del Egeo',
-    image: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80',
-    tag: 'Beach Clubs · Villas · Arte',
+    name: 'Vida Nocturna',
+    subtitle: 'Acceso VIP garantizado',
+    image: 'https://images.unsplash.com/photo-1545128485-c400ce7b23d5?w=800&q=80',
+    tag: 'Nightlife & Clubbing',
   },
   {
-    name: 'Madrid',
-    subtitle: 'El Corazón de Europa',
-    image: 'https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&q=80',
-    tag: 'Gastronomía · Arte · Nightlife',
+    name: 'Yates',
+    subtitle: 'El Mediterráneo es tuyo',
+    image: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?w=800&q=80',
+    tag: 'Charter Náutico',
   },
   {
-    name: 'Miami',
-    subtitle: 'The Magic City',
-    image: 'https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=800&q=80',
-    tag: 'Art Basel · Yachts · Lifestyle',
+    name: 'Gastronomía',
+    subtitle: 'Reservas imposibles',
+    image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+    tag: 'Fine Dining',
   },
 ]
 
@@ -71,7 +71,7 @@ export default function Experiences() {
         {/* Header */}
         <div ref={headerRef} className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
           <div>
-            <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Nuestros Destinos</p>
+            <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Lo que ofrecemos</p>
             <h2 className="font-display text-5xl md:text-7xl text-[#F5F2EC] leading-none">
               Curated<br />
               <span className="text-[#C8A86E]">Experiences</span>
@@ -79,7 +79,7 @@ export default function Experiences() {
             <div className="w-12 h-px bg-[#C8A86E]/40 mt-8" />
           </div>
           <p className="text-[#888] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed">
-            Cada destino, una experiencia diseñada a medida. Tu próximo capítulo empieza aquí.
+            Cada experiencia, diseñada a medida para quienes exigen lo mejor. Disponible en toda España.
           </p>
         </div>
       </div>
@@ -90,7 +90,7 @@ export default function Experiences() {
         className="flex gap-4 overflow-x-auto pb-4 px-6 lg:px-12 snap-x snap-mandatory scrollbar-hide"
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
-        {destinations.map((dest) => (
+        {experiences.map((dest) => (
           <div
             key={dest.name}
             className="group relative min-w-[280px] sm:min-w-[360px] h-[500px] flex-shrink-0 snap-start overflow-hidden cursor-pointer"
