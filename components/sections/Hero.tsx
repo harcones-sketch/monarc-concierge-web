@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { cn } from '@/lib/utils'
 
 export default function Hero() {
@@ -12,9 +13,23 @@ export default function Hero() {
   const subtitleRef = useRef<HTMLDivElement>(null)
   const ctasRef = useRef<HTMLDivElement>(null)
   const scrollIndicatorRef = useRef<HTMLDivElement>(null)
+  const bgRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger)
     const ctx = gsap.context(() => {
+      // Parallax: la imagen sube más despacio que el scroll → efecto profundidad
+      gsap.to(bgRef.current, {
+        yPercent: 25,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: bgRef.current,
+          start: 'top top',
+          end: 'bottom top',
+          scrub: true,
+        },
+      })
+
       const tl = gsap.timeline({ delay: 0.3 })
 
       tl.from(labelRef.current, {
@@ -81,14 +96,14 @@ export default function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen overflow-hidden flex flex-col">
-      {/* Background image */}
-      <div className="absolute inset-0 z-0">
+      {/* Background image con parallax */}
+      <div ref={bgRef} className="absolute inset-0 z-0 scale-[1.3]">
         <Image
           src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80"
           alt="Luxury lifestyle"
           fill
           priority
-          className="object-cover object-center scale-105"
+          className="object-cover object-center"
           sizes="100vw"
         />
         {/* Multi-layer overlay */}
