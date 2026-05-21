@@ -28,7 +28,7 @@ const experiences = [
   {
     name: 'Vida Nocturna',
     subtitle: 'Acceso VIP garantizado',
-    image: 'https://images.unsplash.com/photo-1566737236500-c8ac43014a8e?w=800&q=80',
+    image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800&q=80',
     tag: 'Nightlife & Clubbing',
   },
   {
