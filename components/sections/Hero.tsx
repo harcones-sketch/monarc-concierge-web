@@ -18,15 +18,18 @@ export default function Hero() {
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
     const ctx = gsap.context(() => {
-      // Parallax pronunciado — la imagen se queda atrás mientras scrolleas
+      // Parallax cinematográfico — movimiento sutil + efecto profundidad 3D
+      const section = document.querySelector('#home') as HTMLElement
       gsap.to(bgRef.current, {
-        yPercent: 45,
+        y: () => section.offsetHeight * 0.18, // 18% de la sección = sutil y natural
+        scale: 1.42,                          // escala baja levemente al scrollear → sensación de alejamiento
         ease: 'none',
         scrollTrigger: {
-          trigger: document.documentElement,
+          trigger: section,
           start: 'top top',
-          end: '100vh top',
-          scrub: 0.5,
+          end: 'bottom top',
+          scrub: 1.8,                         // lag suave = movimiento más pesado/cinematográfico
+          invalidateOnRefresh: true,
         },
       })
 
