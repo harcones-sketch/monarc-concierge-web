@@ -50,7 +50,7 @@ export default function Footer() {
                 href="https://instagram.com/monarconcierge"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center border border-[rgba(200,168,110,0.15)] hover:border-gold/40 hover:text-gold text-muted transition-all duration-300"
+                className="w-9 h-9 flex items-center justify-center border border-[#B8965A]/30 hover:border-gold/40 hover:text-gold text-muted transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram size={14} />
@@ -59,7 +59,7 @@ export default function Footer() {
                 href="https://wa.me/34600000000"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 flex items-center justify-center border border-[rgba(200,168,110,0.15)] hover:border-gold/40 hover:text-gold text-muted transition-all duration-300"
+                className="w-9 h-9 flex items-center justify-center border border-[#B8965A]/30 hover:border-gold/40 hover:text-gold text-muted transition-all duration-300"
                 aria-label="WhatsApp"
               >
                 <MessageCircle size={14} />
@@ -90,14 +90,14 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[rgba(200,168,110,0.06)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-muted/50 text-[11px] tracking-[2px] font-sans">
+          <p className="text-[#7A7269] text-[11px] tracking-[2px] font-sans">
             © 2026 MONARC Concierge. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-muted/40 text-[10px] tracking-[2px] uppercase font-sans hover:text-muted cursor-pointer transition-colors duration-300">
+            <span className="text-[#7A7269]/70 text-[10px] tracking-[2px] uppercase font-sans hover:text-[#1C1A17] cursor-pointer transition-colors duration-300">
               Privacidad
             </span>
-            <span className="text-muted/40 text-[10px] tracking-[2px] uppercase font-sans hover:text-muted cursor-pointer transition-colors duration-300">
+            <span className="text-[#7A7269]/70 text-[10px] tracking-[2px] uppercase font-sans hover:text-[#1C1A17] cursor-pointer transition-colors duration-300">
               Términos
             </span>
             <div className="flex items-center gap-2">

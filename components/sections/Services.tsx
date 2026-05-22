@@ -68,34 +68,32 @@ export default function Services() {
         </div>
 
         {/* Grid */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-[#B8965A]/10">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-[#CCC5B8]">
           {services.map((service) => {
             const Icon = service.icon
             return (
               <div
                 key={service.number}
                 className={cn(
-                  'group relative p-8 bg-[#F5F1E8]',
-                  'border-t border-[#B8965A]/10',
-                  'hover:bg-[#F5F1E8] transition-colors duration-500 cursor-default',
+                  'group relative p-8 bg-[#EDE8DF]',
+                  'hover:bg-[#E3DDD3] transition-colors duration-500 cursor-default',
                 )}
               >
-                {/* Gold line on hover */}
-                <div className="absolute bottom-0 left-0 w-0 h-px bg-[#C8A86E] group-hover:w-full transition-all duration-500" />
+                <div className="absolute bottom-0 left-0 w-0 h-px bg-[#B8965A] group-hover:w-full transition-all duration-500" />
 
-                <span className="block text-[10px] tracking-[4px] text-[#C8A86E] mb-8 opacity-60">
+                <span className="block text-[10px] tracking-[4px] text-[#B8965A] mb-8">
                   {service.number}
                 </span>
 
-                <div className="mb-6 w-10 h-10 border border-[#C8A86E]/15 flex items-center justify-center group-hover:border-[#C8A86E]/40 transition-colors duration-300">
-                  <Icon size={16} className="text-[#C8A86E]" />
+                <div className="mb-6 w-10 h-10 border border-[#B8965A]/40 flex items-center justify-center group-hover:border-[#B8965A] transition-colors duration-300">
+                  <Icon size={16} className="text-[#B8965A]" />
                 </div>
 
-                <h3 className="font-display text-lg text-[#F5F2EC] mb-4 group-hover:text-[#C8A86E] transition-colors duration-300">
+                <h3 className="font-display text-lg text-[#1C1A17] mb-4 group-hover:text-[#B8965A] transition-colors duration-300">
                   {service.title}
                 </h3>
 
-                <p className="text-[#7A7269] text-sm leading-relaxed group-hover:text-[#1C1A17] transition-colors duration-300">
+                <p className="text-[#6B6358] text-sm leading-relaxed">
                   {service.description}
                 </p>
               </div>
