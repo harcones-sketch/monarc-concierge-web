@@ -9,9 +9,9 @@
   --gold-light: #C8A86E;
 
   /* Fondos claros — base de la nueva paleta */
-  --cream:    #F7F4EF;   /* crema principal, fondo de secciones claras */
-  --cream-2:  #EDE8DF;   /* crema más intensa, hover/separadores */
-  --white:    #FDFCF9;   /* blanco cálido */
+  --cream:    #EDE8DF;   /* crema principal, fondo de secciones claras */
+  --cream-2:  #E3DDD3;   /* crema más intensa, hover/separadores */
+  --white:    #F5F1E8;   /* blanco cálido */
 
   /* Fondos oscuros — solo para secciones selectas */
   --dark:     #1C1A17;   /* marrón oscuro cálido, NO negro puro */
@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  background-color: var(--cream);
+  background-color: #EDE8DF;
   color: var(--text-primary);
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

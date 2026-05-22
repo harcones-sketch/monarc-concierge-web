@@ -89,7 +89,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" ref={sectionRef} className="bg-[#FDFCF9] section-padding">
+    <section id="about" ref={sectionRef} className="bg-[#EDE8DF] section-padding">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Text column */}
@@ -152,7 +152,7 @@ export default function About() {
               {pillars.map((p) => (
                 <div
                   key={p.label}
-                  className="text-center p-6 bg-[#F7F4EF] border border-[#B8965A]/15 rounded-sm group hover:border-[#B8965A]/40 transition-colors duration-500"
+                  className="text-center p-6 bg-[#F5F1E8] border border-[#B8965A]/15 rounded-sm group hover:border-[#B8965A]/40 transition-colors duration-500"
                 >
                   <div className="font-display text-2xl text-gold mb-3">{p.icon}</div>
                   <p className="text-[10px] tracking-[2px] uppercase text-[#C8A86E] font-sans mb-2">

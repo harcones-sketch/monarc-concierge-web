@@ -51,7 +51,7 @@ export default function Services() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="services" className="py-32 bg-[#F7F4EF]">
+    <section ref={sectionRef} id="services" className="py-32 bg-[#EDE8DF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Header */}
@@ -75,9 +75,9 @@ export default function Services() {
               <div
                 key={service.number}
                 className={cn(
-                  'group relative p-8 bg-white',
+                  'group relative p-8 bg-[#F5F1E8]',
                   'border-t border-[#B8965A]/10',
-                  'hover:bg-[#F7F4EF] transition-colors duration-500 cursor-default',
+                  'hover:bg-[#F5F1E8] transition-colors duration-500 cursor-default',
                 )}
               >
                 {/* Gold line on hover */}

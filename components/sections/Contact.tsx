@@ -42,7 +42,7 @@ export default function Contact() {
   }
 
   return (
-    <section ref={sectionRef} id="contact" className="py-32 bg-[#FDFCF9]">
+    <section ref={sectionRef} id="contact" className="py-32 bg-[#EDE8DF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
           {/* Left */}
@@ -121,10 +121,10 @@ export default function Contact() {
                   />
                   <select
                     value={form.service} onChange={e => setForm({...form, service: e.target.value})}
-                    className={cn(inputClass, 'cursor-pointer bg-[#FDFCF9]')}
+                    className={cn(inputClass, 'cursor-pointer bg-[#EDE8DF]')}
                   >
                     <option value="" disabled>Servicio de interés</option>
-                    {services.map(s => <option key={s} value={s} className="bg-[#FDFCF9]">{s}</option>)}
+                    {services.map(s => <option key={s} value={s} className="bg-[#EDE8DF]">{s}</option>)}
                   </select>
                 </div>
                 <textarea

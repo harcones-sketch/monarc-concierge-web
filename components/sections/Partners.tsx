@@ -68,14 +68,14 @@ export default function Partners() {
   const row2 = partners.slice(8, 16)
 
   return (
-    <section ref={sectionRef} id="partners" className="py-28 bg-[#0D0D0D] overflow-hidden">
+    <section ref={sectionRef} id="partners" className="py-28 bg-[#EDE8DF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div ref={headerRef} className="text-center mb-16">
           <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Nuestra Red</p>
-          <h2 className="font-display text-4xl md:text-5xl text-[#F5F2EC]">
-            Partners &amp; <span className="text-[#C8A86E]">Collaborators</span>
+          <h2 className="font-display text-4xl md:text-5xl text-[#1C1A17]">
+            Partners &amp; <span className="text-[#B8965A]">Collaborators</span>
           </h2>
-          <p className="text-[#888] text-sm mt-4 max-w-md mx-auto leading-relaxed font-sans">
+          <p className="text-[#7A7269] text-sm mt-4 max-w-md mx-auto leading-relaxed font-sans">
             Trabajamos con las mejores marcas del mundo para garantizar experiencias sin igual.
           </p>
         </div>
@@ -99,7 +99,7 @@ export default function Partners() {
       <div ref={row2Ref} className="flex items-center gap-8 px-8 whitespace-nowrap">
         {[...row2, ...row2].map((name, i) => (
           <div key={`r2-${i}`} className="flex items-center gap-8 flex-shrink-0">
-            <span className="font-sans text-[11px] tracking-[4px] text-[#F5F2EC]/60 uppercase hover:text-[#F5F2EC] transition-colors duration-300 cursor-default font-light">
+            <span className="font-sans text-[11px] tracking-[4px] text-[#7A7269] uppercase hover:text-[#1C1A17] transition-colors duration-300 cursor-default font-light">
               {name}
             </span>
             <span className="text-[#C8A86E]/25 text-xs">◆</span>

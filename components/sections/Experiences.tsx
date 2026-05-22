@@ -66,19 +66,19 @@ export default function Experiences() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="experiences" className="py-32 bg-[#080808] overflow-hidden">
+    <section ref={sectionRef} id="experiences" className="py-32 bg-[#EDE8DF] overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header */}
         <div ref={headerRef} className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
           <div>
             <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Lo que ofrecemos</p>
-            <h2 className="font-display text-5xl md:text-7xl text-[#F5F2EC] leading-none">
+            <h2 className="font-display text-5xl md:text-7xl text-[#1C1A17] leading-none">
               Curated<br />
               <span className="text-[#C8A86E]">Experiences</span>
             </h2>
             <div className="w-12 h-px bg-[#C8A86E]/40 mt-8" />
           </div>
-          <p className="text-[#888] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed">
+          <p className="text-[#7A7269] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed">
             Cada experiencia, diseñada a medida para quienes exigen lo mejor. Disponible en toda España.
           </p>
         </div>

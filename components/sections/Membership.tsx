@@ -85,7 +85,7 @@ export default function Membership() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="membership" className="py-32 bg-[#F7F4EF] relative overflow-hidden">
+    <section ref={sectionRef} id="membership" className="py-32 bg-[#EDE8DF] relative overflow-hidden">
       {/* Subtle gold gradient top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-[#C8A86E]/30 to-transparent" />
 
@@ -109,7 +109,7 @@ export default function Membership() {
                 'relative p-10 flex flex-col transition-all duration-500',
                 tier.featured
                   ? 'bg-[#1C1A17] border-t-2 border-[#B8965A] shadow-xl'
-                  : 'bg-white border border-[#B8965A]/15 hover:border-[#B8965A]/40 hover:shadow-md'
+                  : 'bg-[#F5F1E8] border border-[#B8965A]/15 hover:border-[#B8965A]/40 hover:shadow-md'
               )}
             >
               {tier.featured && (

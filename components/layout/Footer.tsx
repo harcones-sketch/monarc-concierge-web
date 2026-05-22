@@ -28,7 +28,7 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1C1A17] border-t border-[#B8965A]/15">
+    <footer className="bg-[#EDE8DF] border-t border-[#B8965A]/20">
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
@@ -70,7 +70,7 @@ export default function Footer() {
           {/* Links columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-display text-[11px] tracking-[4px] uppercase text-cream mb-6">
+              <h4 className="font-display text-[11px] tracking-[4px] uppercase text-[#1C1A17] mb-6">
                 {title}
               </h4>
               <ul className="space-y-3">
