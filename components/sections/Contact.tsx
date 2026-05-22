@@ -34,7 +34,7 @@ export default function Contact() {
     return () => ctx.revert()
   }, [])
 
-  const inputClass = "w-full bg-transparent border-b border-[#333] text-[#F5F2EC] py-4 text-sm placeholder-[#444] focus:outline-none focus:border-[#C8A86E] transition-colors duration-300"
+  const inputClass = "w-full bg-transparent border-b border-[#C8BFA8] text-[#1C1A17] py-4 text-sm placeholder-[#A09588] focus:outline-none focus:border-[#B8965A] transition-colors duration-300"
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -42,20 +42,20 @@ export default function Contact() {
   }
 
   return (
-    <section ref={sectionRef} id="contact" className="py-32 bg-[#080808]">
+    <section ref={sectionRef} id="contact" className="py-32 bg-[#FDFCF9]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 lg:gap-32">
           {/* Left */}
           <div ref={leftRef}>
             <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Contacto</p>
-            <h2 className="font-display text-4xl md:text-6xl text-[#F5F2EC] leading-tight mb-8">
+            <h2 className="font-display text-4xl md:text-6xl text-[#1C1A17] leading-tight mb-8">
               Comenzamos<br />
               <span className="text-[#C8A86E]">con una</span><br />
               conversación.
             </h2>
             <div className="w-12 h-px bg-[#C8A86E]/40 mb-12" />
 
-            <p className="text-[#888] leading-relaxed mb-16 max-w-sm">
+            <p className="text-[#7A7269] leading-relaxed mb-16 max-w-sm">
               Cuéntanos qué necesitas. Nuestro equipo te responderá en menos de 2 horas con una propuesta personalizada.
             </p>
 
@@ -64,7 +64,7 @@ export default function Contact() {
                 <div className="w-10 h-10 border border-[#C8A86E]/20 flex items-center justify-center group-hover:border-[#C8A86E]/50 transition-colors">
                   <Mail className="w-4 h-4 text-[#C8A86E]" />
                 </div>
-                <span className="text-[#888] group-hover:text-[#F5F2EC] transition-colors text-sm">
+                <span className="text-[#7A7269] group-hover:text-[#1C1A17] transition-colors text-sm">
                   hello@monarconcierge.com
                 </span>
               </a>
@@ -72,7 +72,7 @@ export default function Contact() {
                 <div className="w-10 h-10 border border-[#C8A86E]/20 flex items-center justify-center group-hover:border-[#C8A86E]/50 transition-colors">
                   <Phone className="w-4 h-4 text-[#C8A86E]" />
                 </div>
-                <span className="text-[#888] group-hover:text-[#F5F2EC] transition-colors text-sm">
+                <span className="text-[#7A7269] group-hover:text-[#1C1A17] transition-colors text-sm">
                   +34 600 000 000
                 </span>
               </a>
@@ -80,7 +80,7 @@ export default function Contact() {
                 <div className="w-10 h-10 border border-[#C8A86E]/20 flex items-center justify-center group-hover:border-[#C8A86E]/50 transition-colors">
                   <Instagram className="w-4 h-4 text-[#C8A86E]" />
                 </div>
-                <span className="text-[#888] group-hover:text-[#F5F2EC] transition-colors text-sm">
+                <span className="text-[#7A7269] group-hover:text-[#1C1A17] transition-colors text-sm">
                   @monarconcierge
                 </span>
               </a>
@@ -92,8 +92,8 @@ export default function Contact() {
             {submitted ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-20">
                 <div className="w-16 h-px bg-[#C8A86E] mx-auto mb-8" />
-                <h3 className="font-display text-3xl text-[#F5F2EC] mb-4">Mensaje enviado</h3>
-                <p className="text-[#888] text-sm">Nuestro equipo se pondrá en contacto contigo en las próximas 2 horas.</p>
+                <h3 className="font-display text-3xl text-[#1C1A17] mb-4">Mensaje enviado</h3>
+                <p className="text-[#7A7269] text-sm">Nuestro equipo se pondrá en contacto contigo en las próximas 2 horas.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">
@@ -121,10 +121,10 @@ export default function Contact() {
                   />
                   <select
                     value={form.service} onChange={e => setForm({...form, service: e.target.value})}
-                    className={cn(inputClass, 'cursor-pointer bg-[#080808]')}
+                    className={cn(inputClass, 'cursor-pointer bg-[#FDFCF9]')}
                   >
                     <option value="" disabled>Servicio de interés</option>
-                    {services.map(s => <option key={s} value={s} className="bg-[#111]">{s}</option>)}
+                    {services.map(s => <option key={s} value={s} className="bg-[#FDFCF9]">{s}</option>)}
                   </select>
                 </div>
                 <textarea
@@ -134,7 +134,7 @@ export default function Contact() {
                 />
                 <button
                   type="submit"
-                  className="group flex items-center gap-3 bg-[#C8A86E] text-[#080808] px-10 py-4 text-[11px] tracking-[3px] uppercase font-medium hover:bg-[#B8965A] transition-colors duration-300"
+                  className="group flex items-center gap-3 bg-[#B8965A] text-white px-10 py-4 text-[11px] tracking-[3px] uppercase font-medium hover:bg-[#9E7D46] transition-colors duration-300"
                 >
                   Enviar mensaje
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

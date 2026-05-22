@@ -9,14 +9,18 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: '#C8A86E',
-        'gold-2': '#B8965A',
-        dark: '#080808',
-        'dark-2': '#0D0D0D',
-        'dark-3': '#111111',
-        cream: '#F5F2EC',
-        muted: '#888888',
-        border: 'rgba(200,168,110,0.12)',
+        gold:       '#B8965A',
+        'gold-2':   '#9E7D46',
+        'gold-light': '#C8A86E',
+        dark:       '#1C1A17',
+        'dark-2':   '#232018',
+        'dark-3':   '#2A2620',
+        cream:      '#F7F4EF',
+        'cream-2':  '#EDE8DF',
+        white:      '#FDFCF9',
+        muted:      '#7A7269',
+        'muted-2':  '#A09588',
+        border:     'rgba(184,150,90,0.15)',
       },
       fontFamily: {
         display: ['var(--font-cinzel)', 'serif'],

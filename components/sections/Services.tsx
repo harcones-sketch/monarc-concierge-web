@@ -51,33 +51,33 @@ export default function Services() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="services" className="py-32 bg-[#0D0D0D]">
+    <section ref={sectionRef} id="services" className="py-32 bg-[#F7F4EF]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
         {/* Header */}
         <div ref={headerRef} className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-20">
           <div>
             <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Lo que hacemos</p>
-            <h2 className="font-display text-5xl md:text-7xl text-[#F5F2EC] leading-none">
+            <h2 className="font-display text-5xl md:text-7xl text-[#1C1A17] leading-none">
               Our<br /><span className="text-[#C8A86E]">Services</span>
             </h2>
           </div>
-          <p className="text-[#888] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed lg:pb-2">
+          <p className="text-[#7A7269] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed lg:pb-2">
             Cada servicio, diseñado para quienes exigen lo mejor sin compromisos.
           </p>
         </div>
 
         {/* Grid */}
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-[#C8A86E]/08">
+        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-px bg-[#B8965A]/10">
           {services.map((service) => {
             const Icon = service.icon
             return (
               <div
                 key={service.number}
                 className={cn(
-                  'group relative p-8 bg-[#0D0D0D]',
-                  'border-t border-[#C8A86E]/08',
-                  'hover:bg-[#111] transition-colors duration-500 cursor-default',
+                  'group relative p-8 bg-white',
+                  'border-t border-[#B8965A]/10',
+                  'hover:bg-[#F7F4EF] transition-colors duration-500 cursor-default',
                 )}
               >
                 {/* Gold line on hover */}
@@ -95,7 +95,7 @@ export default function Services() {
                   {service.title}
                 </h3>
 
-                <p className="text-[#666] text-sm leading-relaxed group-hover:text-[#888] transition-colors duration-300">
+                <p className="text-[#7A7269] text-sm leading-relaxed group-hover:text-[#1C1A17] transition-colors duration-300">
                   {service.description}
                 </p>
               </div>

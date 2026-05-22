@@ -85,7 +85,7 @@ export default function Membership() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="membership" className="py-32 bg-[#080808] relative overflow-hidden">
+    <section ref={sectionRef} id="membership" className="py-32 bg-[#F7F4EF] relative overflow-hidden">
       {/* Subtle gold gradient top */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-[#C8A86E]/30 to-transparent" />
 
@@ -93,28 +93,28 @@ export default function Membership() {
         {/* Header */}
         <div ref={headerRef} className="text-center mb-20">
           <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Acceso Exclusivo</p>
-          <h2 className="font-display text-5xl md:text-7xl text-[#F5F2EC] mb-8">Membership</h2>
-          <div className="w-12 h-px bg-[#C8A86E]/40 mx-auto mb-8" />
-          <p className="text-[#888] max-w-xl mx-auto leading-relaxed">
+          <h2 className="font-display text-5xl md:text-7xl text-[#1C1A17] mb-8">Membership</h2>
+          <div className="w-12 h-px bg-[#B8965A]/40 mx-auto mb-8" />
+          <p className="text-[#7A7269] max-w-xl mx-auto leading-relaxed">
             Elige el nivel de servicio que define tu estilo de vida. Cada membresía es una invitación a lo extraordinario.
           </p>
         </div>
 
         {/* Cards */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-px bg-[#C8A86E]/10">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {tiers.map((tier) => (
             <div
               key={tier.name}
               className={cn(
                 'relative p-10 flex flex-col transition-all duration-500',
                 tier.featured
-                  ? 'bg-[#0D0D0D] border-t-2 border-[#C8A86E]'
-                  : 'bg-[#080808]'
+                  ? 'bg-[#1C1A17] border-t-2 border-[#B8965A] shadow-xl'
+                  : 'bg-white border border-[#B8965A]/15 hover:border-[#B8965A]/40 hover:shadow-md'
               )}
             >
               {tier.featured && (
                 <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#C8A86E] text-[#080808] text-[9px] tracking-[3px] uppercase px-4 py-1 font-medium">
+                  <span className="bg-[#B8965A] text-white text-[9px] tracking-[3px] uppercase px-4 py-1 font-medium">
                     Most Popular
                   </span>
                 </div>
@@ -123,30 +123,36 @@ export default function Membership() {
               <div className="mb-8">
                 <h3 className={cn(
                   'font-display text-2xl mb-3',
-                  tier.featured ? 'text-[#C8A86E]' : 'text-[#F5F2EC]'
+                  tier.featured ? 'text-[#C8A86E]' : 'text-[#1C1A17]'
                 )}>
                   {tier.name}
                 </h3>
-                <p className="text-[#888] text-sm leading-relaxed">{tier.description}</p>
+                <p className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#888]' : 'text-[#7A7269]')}>
+                  {tier.description}
+                </p>
               </div>
 
               <div className="mb-10">
                 <span className={cn(
                   'font-display text-5xl',
-                  tier.featured ? 'text-[#C8A86E]' : 'text-[#F5F2EC]'
+                  tier.featured ? 'text-[#C8A86E]' : 'text-[#1C1A17]'
                 )}>
                   {tier.price}
                 </span>
                 {tier.period && (
-                  <span className="text-[#888] text-sm ml-1">{tier.period}</span>
+                  <span className={cn('text-sm ml-1', tier.featured ? 'text-[#888]' : 'text-[#7A7269]')}>
+                    {tier.period}
+                  </span>
                 )}
               </div>
 
               <ul className="space-y-4 mb-10 flex-1">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-[#C8A86E] mt-0.5 flex-shrink-0" />
-                    <span className="text-[#888] text-sm leading-relaxed">{feature}</span>
+                    <Check className="w-4 h-4 text-[#B8965A] mt-0.5 flex-shrink-0" />
+                    <span className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#888]' : 'text-[#7A7269]')}>
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -158,8 +164,8 @@ export default function Membership() {
                 className={cn(
                   'w-full py-4 text-[11px] tracking-[3px] uppercase transition-all duration-300 text-center block',
                   tier.featured
-                    ? 'bg-[#C8A86E] text-[#080808] hover:bg-[#B8965A]'
-                    : 'border border-[#C8A86E]/30 text-[#C8A86E] hover:border-[#C8A86E] hover:bg-[#C8A86E]/5'
+                    ? 'bg-[#B8965A] text-white hover:bg-[#9E7D46]'
+                    : 'border border-[#B8965A]/40 text-[#B8965A] hover:bg-[#B8965A] hover:text-white'
                 )}
               >
                 {tier.cta}

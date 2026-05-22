@@ -39,7 +39,7 @@ export default function Navbar() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           scrolled
-            ? 'bg-[#080808]/95 backdrop-blur-md border-b border-[rgba(200,168,110,0.1)]'
+            ? 'bg-[#F7F4EF]/95 backdrop-blur-md border-b border-[#B8965A]/15'
             : 'bg-transparent'
         )}
       >
@@ -62,7 +62,10 @@ export default function Navbar() {
               <li key={link.label}>
                 <button
                   onClick={() => scrollTo(link.href)}
-                  className="text-[11px] tracking-[3px] uppercase text-muted hover:text-cream transition-colors duration-300 font-sans"
+                  className={cn(
+                    'text-[11px] tracking-[3px] uppercase transition-colors duration-300 font-sans',
+                    scrolled ? 'text-[#7A7269] hover:text-[#1C1A17]' : 'text-[#F5F2EC]/70 hover:text-[#F5F2EC]'
+                  )}
                 >
                   {link.label}
                 </button>
@@ -74,13 +77,18 @@ export default function Navbar() {
           <div className="flex items-center gap-4">
             <button
               onClick={() => scrollTo('#membership')}
-              className="hidden lg:flex items-center gap-2 px-5 py-2.5 border border-gold/40 text-gold text-[11px] tracking-[3px] uppercase font-sans hover:bg-gold hover:text-dark transition-all duration-300"
+              className={cn(
+                'hidden lg:flex items-center gap-2 px-5 py-2.5 text-[11px] tracking-[3px] uppercase font-sans transition-all duration-300',
+                scrolled
+                  ? 'border border-[#B8965A]/50 text-[#B8965A] hover:bg-[#B8965A] hover:text-white'
+                  : 'border border-[#C8A86E]/40 text-[#C8A86E] hover:bg-[#C8A86E]/10'
+              )}
             >
               Become a Member
             </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden text-cream p-1"
+              className={cn('lg:hidden p-1', scrolled ? 'text-[#1C1A17]' : 'text-[#F5F2EC]')}
               aria-label="Toggle menu"
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}

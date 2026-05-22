@@ -89,7 +89,7 @@ export default function About() {
   }, [])
 
   return (
-    <section id="about" ref={sectionRef} className="bg-[#080808] section-padding">
+    <section id="about" ref={sectionRef} className="bg-[#FDFCF9] section-padding">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Text column */}
@@ -97,13 +97,13 @@ export default function About() {
             <span className="block text-[10px] tracking-[6px] uppercase text-gold font-sans mb-4">
               Nuestra Historia
             </span>
-            <h2 className="font-display text-4xl md:text-5xl text-cream tracking-widest mb-8 leading-tight">
+            <h2 className="font-display text-4xl md:text-5xl text-[#1C1A17] tracking-widest mb-8 leading-tight">
               El Arte de<br />
               <span className="text-gradient-gold">Vivir Sin Límites</span>
             </h2>
             <div className="w-12 h-px bg-gold mb-8" />
 
-            <div className="space-y-5 text-muted font-sans text-[15px] leading-relaxed mb-12">
+            <div className="space-y-5 text-[#7A7269] font-sans text-[15px] leading-relaxed mb-12">
               <p>
                 MONARC nace de una pregunta simple: ¿por qué lo extraordinario debería ser complicado? Somos el puente entre quienes exigen lo mejor y las experiencias que pocos imaginan.
               </p>
@@ -119,12 +119,12 @@ export default function About() {
             <div className="space-y-6">
               {values.map((v) => (
                 <div key={v.title} className="flex gap-5">
-                  <div className="flex-shrink-0 w-px bg-gold/30 relative">
+                  <div className="flex-shrink-0 w-px bg-[#B8965A]/20 relative">
                     <div className="absolute top-0 left-0 w-px h-6 bg-gold" />
                   </div>
                   <div>
-                    <h4 className="font-display text-sm text-cream tracking-widest mb-1">{v.title}</h4>
-                    <p className="text-muted text-sm font-sans leading-relaxed">{v.text}</p>
+                    <h4 className="font-display text-sm text-[#1C1A17] tracking-widest mb-1">{v.title}</h4>
+                    <p className="text-[#7A7269] text-sm font-sans leading-relaxed">{v.text}</p>
                   </div>
                 </div>
               ))}
@@ -152,13 +152,13 @@ export default function About() {
               {pillars.map((p) => (
                 <div
                   key={p.label}
-                  className="text-center p-6 bg-[#0D0D0D] border border-[rgba(200,168,110,0.08)] rounded-sm group hover:border-[rgba(200,168,110,0.25)] transition-colors duration-500"
+                  className="text-center p-6 bg-[#F7F4EF] border border-[#B8965A]/15 rounded-sm group hover:border-[#B8965A]/40 transition-colors duration-500"
                 >
                   <div className="font-display text-2xl text-gold mb-3">{p.icon}</div>
                   <p className="text-[10px] tracking-[2px] uppercase text-[#C8A86E] font-sans mb-2">
                     {p.label}
                   </p>
-                  <p className="text-[10px] text-[#555] font-sans leading-relaxed hidden sm:block">
+                  <p className="text-[10px] text-[#A09588] font-sans leading-relaxed hidden sm:block">
                     {p.desc}
                   </p>
                 </div>
