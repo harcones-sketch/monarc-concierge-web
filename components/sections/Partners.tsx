@@ -36,7 +36,7 @@ function PartnerLogo({ name, domain }: { name: string; domain: string }) {
           alt={name}
           width={90}
           height={36}
-          className="object-contain max-h-8 w-auto opacity-40 grayscale group-hover:opacity-80 group-hover:grayscale-0 transition-all duration-500"
+          className="object-contain max-h-8 w-auto opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
           onError={() => setFailed(true)}
           unoptimized
         />
@@ -101,7 +101,7 @@ export default function Partners() {
           <h2 className="font-display text-4xl md:text-5xl text-[#1C1A17]">
             Partners &amp; <span className="text-[#B8965A]">Collaborators</span>
           </h2>
-          <p className="text-[#7A7269] text-sm mt-4 max-w-md mx-auto leading-relaxed font-sans">
+          <p className="text-[#3D3530] text-sm mt-4 max-w-md mx-auto leading-relaxed font-sans">
             Trabajamos con las mejores marcas del mundo para garantizar experiencias sin igual.
           </p>
         </div>

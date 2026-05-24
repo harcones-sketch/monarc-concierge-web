@@ -103,7 +103,7 @@ export default function About() {
             </h2>
             <div className="w-12 h-px bg-gold mb-8" />
 
-            <div className="space-y-5 text-[#7A7269] font-sans text-[15px] leading-relaxed mb-12">
+            <div className="space-y-5 text-[#3D3530] font-sans text-[15px] leading-relaxed mb-12">
               <p>
                 MONARC nace de una pregunta simple: ¿por qué lo extraordinario debería ser complicado? Somos el puente entre quienes exigen lo mejor y las experiencias que pocos imaginan.
               </p>
@@ -124,7 +124,7 @@ export default function About() {
                   </div>
                   <div>
                     <h4 className="font-display text-sm text-[#1C1A17] tracking-widest mb-1">{v.title}</h4>
-                    <p className="text-[#7A7269] text-sm font-sans leading-relaxed">{v.text}</p>
+                    <p className="text-[#3D3530] text-sm font-sans leading-relaxed">{v.text}</p>
                   </div>
                 </div>
               ))}
@@ -158,7 +158,7 @@ export default function About() {
                   <p className="text-[10px] tracking-[2px] uppercase text-[#C8A86E] font-sans mb-2">
                     {p.label}
                   </p>
-                  <p className="text-[10px] text-[#A09588] font-sans leading-relaxed hidden sm:block">
+                  <p className="text-[10px] text-[#6A5E55] font-sans leading-relaxed hidden sm:block">
                     {p.desc}
                   </p>
                 </div>

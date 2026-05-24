@@ -62,7 +62,7 @@ export default function Services() {
               Our<br /><span className="text-[#C8A86E]">Services</span>
             </h2>
           </div>
-          <p className="text-[#7A7269] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed lg:pb-2">
+          <p className="text-[#3D3530] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed lg:pb-2">
             Cada servicio, diseñado para quienes exigen lo mejor sin compromisos.
           </p>
         </div>

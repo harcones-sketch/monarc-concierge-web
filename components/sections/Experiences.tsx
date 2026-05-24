@@ -279,7 +279,7 @@ function ExperienceModal({
         <div className="lg:w-1/2 p-8 lg:p-10 flex flex-col">
           <p className="text-[9px] tracking-[4px] uppercase text-[#C8A86E] mb-4">{exp.tag}</p>
           <h3 className="font-display text-3xl lg:text-4xl text-[#1C1A17] mb-2">{exp.name}</h3>
-          <p className="text-[#7A7269] text-sm mb-6 italic font-light">{exp.subtitle}</p>
+          <p className="text-[#3D3530] text-sm mb-6 italic font-light">{exp.subtitle}</p>
           <div className="w-10 h-px bg-[#C8A86E]/40 mb-6" />
 
           <p className="text-[#4A4440] text-sm leading-relaxed mb-8">{exp.description}</p>
@@ -289,7 +289,7 @@ function ExperienceModal({
             {exp.details.map((d, i) => (
               <li key={i} className="flex items-start gap-3">
                 <span className="mt-1.5 w-1 h-1 rounded-full bg-[#C8A86E] flex-shrink-0" />
-                <span className="text-[#7A7269] text-xs leading-relaxed">{d}</span>
+                <span className="text-[#3D3530] text-xs leading-relaxed">{d}</span>
               </li>
             ))}
           </ul>
@@ -314,7 +314,7 @@ function ExperienceModal({
             </a>
           </div>
 
-          <p className="text-[#A09588] text-[10px] mt-4 text-center">
+          <p className="text-[#6A5E55] text-[10px] mt-4 text-center">
             Respuesta garantizada en menos de 2 horas
           </p>
         </div>
@@ -359,7 +359,7 @@ export default function Experiences() {
               </h2>
               <div className="w-12 h-px bg-[#C8A86E]/40 mt-8" />
             </div>
-            <p className="text-[#7A7269] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed">
+            <p className="text-[#3D3530] max-w-xs mt-8 lg:mt-0 text-sm leading-relaxed">
               Cada experiencia, diseñada a medida para quienes exigen lo mejor. Disponible en toda España.
             </p>
           </div>
@@ -393,7 +393,7 @@ export default function Experiences() {
               <div className="absolute inset-0 p-8 flex flex-col justify-end">
                 <p className="text-[9px] tracking-[3px] uppercase text-[#C8A86E] mb-2">{exp.tag}</p>
                 <h3 className="font-display text-3xl text-[#F5F2EC] mb-1">{exp.name}</h3>
-                <p className="text-[#888] text-sm mb-6">{exp.subtitle}</p>
+                <p className="text-[#4A4440] text-sm mb-6">{exp.subtitle}</p>
                 <div className="flex items-center gap-2 translate-y-2 opacity-0 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
                   <span className="text-[10px] tracking-[3px] uppercase text-[#C8A86E]">Ver más</span>
                   <ArrowRight className="w-3 h-3 text-[#C8A86E]" />

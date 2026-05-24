@@ -64,7 +64,7 @@ export default function Navbar() {
                   onClick={() => scrollTo(link.href)}
                   className={cn(
                     'text-[11px] tracking-[3px] uppercase transition-colors duration-300 font-sans',
-                    scrolled ? 'text-[#7A7269] hover:text-[#1C1A17]' : 'text-[#F5F2EC]/70 hover:text-[#F5F2EC]'
+                    scrolled ? 'text-[#3D3530] hover:text-[#1C1A17]' : 'text-[#F5F2EC]/70 hover:text-[#F5F2EC]'
                   )}
                 >
                   {link.label}

@@ -90,14 +90,14 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-[rgba(200,168,110,0.06)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-[#7A7269] text-[11px] tracking-[2px] font-sans">
+          <p className="text-[#3D3530] text-[11px] tracking-[2px] font-sans">
             © 2026 MONARC Concierge. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
-            <span className="text-[#7A7269]/70 text-[10px] tracking-[2px] uppercase font-sans hover:text-[#1C1A17] cursor-pointer transition-colors duration-300">
+            <span className="text-[#3D3530]/70 text-[10px] tracking-[2px] uppercase font-sans hover:text-[#1C1A17] cursor-pointer transition-colors duration-300">
               Privacidad
             </span>
-            <span className="text-[#7A7269]/70 text-[10px] tracking-[2px] uppercase font-sans hover:text-[#1C1A17] cursor-pointer transition-colors duration-300">
+            <span className="text-[#3D3530]/70 text-[10px] tracking-[2px] uppercase font-sans hover:text-[#1C1A17] cursor-pointer transition-colors duration-300">
               Términos
             </span>
             <div className="flex items-center gap-2">

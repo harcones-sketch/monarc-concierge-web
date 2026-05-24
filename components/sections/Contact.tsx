@@ -34,7 +34,7 @@ export default function Contact() {
     return () => ctx.revert()
   }, [])
 
-  const inputClass = "w-full bg-transparent border-b border-[#C8BFA8] text-[#1C1A17] py-4 text-sm placeholder-[#A09588] focus:outline-none focus:border-[#B8965A] transition-colors duration-300"
+  const inputClass = "w-full bg-transparent border-b border-[#C8BFA8] text-[#1C1A17] py-4 text-sm placeholder-[#6A5E55] focus:outline-none focus:border-[#B8965A] transition-colors duration-300"
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -55,7 +55,7 @@ export default function Contact() {
             </h2>
             <div className="w-12 h-px bg-[#C8A86E]/40 mb-12" />
 
-            <p className="text-[#7A7269] leading-relaxed mb-16 max-w-sm">
+            <p className="text-[#3D3530] leading-relaxed mb-16 max-w-sm">
               Cuéntanos qué necesitas. Nuestro equipo te responderá en menos de 2 horas con una propuesta personalizada.
             </p>
 
@@ -64,7 +64,7 @@ export default function Contact() {
                 <div className="w-10 h-10 border border-[#C8A86E]/20 flex items-center justify-center group-hover:border-[#C8A86E]/50 transition-colors">
                   <Mail className="w-4 h-4 text-[#C8A86E]" />
                 </div>
-                <span className="text-[#7A7269] group-hover:text-[#1C1A17] transition-colors text-sm">
+                <span className="text-[#3D3530] group-hover:text-[#1C1A17] transition-colors text-sm">
                   hello@monarconcierge.com
                 </span>
               </a>
@@ -72,7 +72,7 @@ export default function Contact() {
                 <div className="w-10 h-10 border border-[#C8A86E]/20 flex items-center justify-center group-hover:border-[#C8A86E]/50 transition-colors">
                   <Phone className="w-4 h-4 text-[#C8A86E]" />
                 </div>
-                <span className="text-[#7A7269] group-hover:text-[#1C1A17] transition-colors text-sm">
+                <span className="text-[#3D3530] group-hover:text-[#1C1A17] transition-colors text-sm">
                   +34 600 000 000
                 </span>
               </a>
@@ -80,7 +80,7 @@ export default function Contact() {
                 <div className="w-10 h-10 border border-[#C8A86E]/20 flex items-center justify-center group-hover:border-[#C8A86E]/50 transition-colors">
                   <Instagram className="w-4 h-4 text-[#C8A86E]" />
                 </div>
-                <span className="text-[#7A7269] group-hover:text-[#1C1A17] transition-colors text-sm">
+                <span className="text-[#3D3530] group-hover:text-[#1C1A17] transition-colors text-sm">
                   @monarconcierge
                 </span>
               </a>
@@ -93,7 +93,7 @@ export default function Contact() {
               <div className="h-full flex flex-col items-center justify-center text-center py-20">
                 <div className="w-16 h-px bg-[#C8A86E] mx-auto mb-8" />
                 <h3 className="font-display text-3xl text-[#1C1A17] mb-4">Mensaje enviado</h3>
-                <p className="text-[#7A7269] text-sm">Nuestro equipo se pondrá en contacto contigo en las próximas 2 horas.</p>
+                <p className="text-[#3D3530] text-sm">Nuestro equipo se pondrá en contacto contigo en las próximas 2 horas.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-8">

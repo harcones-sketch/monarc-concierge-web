@@ -95,7 +95,7 @@ export default function Membership() {
           <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Acceso Exclusivo</p>
           <h2 className="font-display text-5xl md:text-7xl text-[#1C1A17] mb-8">Membership</h2>
           <div className="w-12 h-px bg-[#B8965A]/40 mx-auto mb-8" />
-          <p className="text-[#7A7269] max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#3D3530] max-w-xl mx-auto leading-relaxed">
             Elige el nivel de servicio que define tu estilo de vida. Cada membresía es una invitación a lo extraordinario.
           </p>
         </div>
@@ -127,7 +127,7 @@ export default function Membership() {
                 )}>
                   {tier.name}
                 </h3>
-                <p className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#888]' : 'text-[#7A7269]')}>
+                <p className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#4A4440]' : 'text-[#3D3530]')}>
                   {tier.description}
                 </p>
               </div>
@@ -140,7 +140,7 @@ export default function Membership() {
                   {tier.price}
                 </span>
                 {tier.period && (
-                  <span className={cn('text-sm ml-1', tier.featured ? 'text-[#888]' : 'text-[#7A7269]')}>
+                  <span className={cn('text-sm ml-1', tier.featured ? 'text-[#4A4440]' : 'text-[#3D3530]')}>
                     {tier.period}
                   </span>
                 )}
@@ -150,7 +150,7 @@ export default function Membership() {
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
                     <Check className="w-4 h-4 text-[#B8965A] mt-0.5 flex-shrink-0" />
-                    <span className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#888]' : 'text-[#7A7269]')}>
+                    <span className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#4A4440]' : 'text-[#3D3530]')}>
                       {feature}
                     </span>
                   </li>
