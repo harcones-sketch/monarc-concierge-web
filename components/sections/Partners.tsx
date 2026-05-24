@@ -1,27 +1,53 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import Image from 'next/image'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 const partners = [
-  'Four Seasons',
-  'Rolls-Royce',
-  'NetJets',
-  'Waldorf Astoria',
-  'Porsche',
-  'Mandarin Oriental',
-  'Emirates',
-  'Nobu',
-  'Aston Martin',
-  'Pacha Group',
-  'Lamborghini',
-  'Cipriani',
-  'Ibiza Gran Hotel',
-  'Bugatti',
-  'Qatar Airways',
-  'Hakkasan',
+  { name: 'Four Seasons',      domain: 'fourseasons.com' },
+  { name: 'Rolls-Royce',       domain: 'rolls-roycemotorcars.com' },
+  { name: 'NetJets',           domain: 'netjets.com' },
+  { name: 'Waldorf Astoria',   domain: 'waldorfastoria.com' },
+  { name: 'Porsche',           domain: 'porsche.com' },
+  { name: 'Mandarin Oriental', domain: 'mandarinoriental.com' },
+  { name: 'Emirates',          domain: 'emirates.com' },
+  { name: 'Nobu',              domain: 'noburestaurants.com' },
+  { name: 'Aston Martin',      domain: 'astonmartin.com' },
+  { name: 'Pacha',             domain: 'pacha.com' },
+  { name: 'Lamborghini',       domain: 'lamborghini.com' },
+  { name: 'Bulgari',           domain: 'bulgari.com' },
+  { name: 'Bugatti',           domain: 'bugatti.com' },
+  { name: 'Qatar Airways',     domain: 'qatarairways.com' },
+  { name: 'Hakkasan',          domain: 'hakkasan.com' },
+  { name: 'Cipriani',          domain: 'cipriani.com' },
 ]
+
+/** Logo individual con fallback al nombre si la imagen no carga */
+function PartnerLogo({ name, domain }: { name: string; domain: string }) {
+  const [failed, setFailed] = useState(false)
+
+  return (
+    <div className="flex items-center justify-center w-28 h-10 flex-shrink-0 group">
+      {!failed ? (
+        <Image
+          src={`https://logo.clearbit.com/${domain}?size=120`}
+          alt={name}
+          width={90}
+          height={36}
+          className="object-contain max-h-8 w-auto opacity-40 grayscale group-hover:opacity-80 group-hover:grayscale-0 transition-all duration-500"
+          onError={() => setFailed(true)}
+          unoptimized
+        />
+      ) : (
+        <span className="font-sans text-[10px] tracking-[3px] text-[#1C1A17]/50 uppercase group-hover:text-[#1C1A17]/90 transition-colors duration-300 font-light whitespace-nowrap">
+          {name}
+        </span>
+      )}
+    </div>
+  )
+}
 
 export default function Partners() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -39,7 +65,7 @@ export default function Partners() {
 
       // Fila 1 → se mueve a la izquierda
       gsap.to(row1Ref.current, {
-        x: '-10%',
+        x: '-8%',
         ease: 'none',
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -51,7 +77,7 @@ export default function Partners() {
 
       // Fila 2 → se mueve a la derecha
       gsap.to(row2Ref.current, {
-        x: '10%',
+        x: '8%',
         ease: 'none',
         scrollTrigger: {
           trigger: sectionRef.current,
@@ -84,25 +110,21 @@ export default function Partners() {
       <div className="w-full h-px bg-[#C8A86E]/20 mb-14" />
 
       {/* Fila 1 */}
-      <div ref={row1Ref} className="flex items-center gap-8 mb-6 px-8 whitespace-nowrap">
-        {[...row1, ...row1].map((name, i) => (
-          <div key={`r1-${i}`} className="flex items-center gap-8 flex-shrink-0">
-            <span className="font-sans text-[11px] tracking-[4px] text-[#C8A86E]/80 uppercase hover:text-[#C8A86E] transition-colors duration-300 cursor-default font-light">
-              {name}
-            </span>
-            <span className="text-[#C8A86E]/25 text-xs">◆</span>
+      <div ref={row1Ref} className="flex items-center gap-12 mb-8 px-8 whitespace-nowrap">
+        {[...row1, ...row1].map((p, i) => (
+          <div key={`r1-${i}`} className="flex items-center gap-12 flex-shrink-0">
+            <PartnerLogo name={p.name} domain={p.domain} />
+            <span className="text-[#C8A86E]/20 text-xs flex-shrink-0">◆</span>
           </div>
         ))}
       </div>
 
       {/* Fila 2 */}
-      <div ref={row2Ref} className="flex items-center gap-8 px-8 whitespace-nowrap">
-        {[...row2, ...row2].map((name, i) => (
-          <div key={`r2-${i}`} className="flex items-center gap-8 flex-shrink-0">
-            <span className="font-sans text-[11px] tracking-[4px] text-[#7A7269] uppercase hover:text-[#1C1A17] transition-colors duration-300 cursor-default font-light">
-              {name}
-            </span>
-            <span className="text-[#C8A86E]/25 text-xs">◆</span>
+      <div ref={row2Ref} className="flex items-center gap-12 px-8 whitespace-nowrap">
+        {[...row2, ...row2].map((p, i) => (
+          <div key={`r2-${i}`} className="flex items-center gap-12 flex-shrink-0">
+            <PartnerLogo name={p.name} domain={p.domain} />
+            <span className="text-[#C8A86E]/20 text-xs flex-shrink-0">◆</span>
           </div>
         ))}
       </div>
