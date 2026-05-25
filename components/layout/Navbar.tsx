@@ -10,7 +10,7 @@ const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'Services', href: '#services' },
   { label: 'Experiences', href: '#experiences' },
-  { label: 'Membership', href: '#membership' },
+  { label: 'Servicios', href: '#membership' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -84,7 +84,7 @@ export default function Navbar() {
                   : 'border border-[#C8A86E]/40 text-[#C8A86E] hover:bg-[#C8A86E]/10'
               )}
             >
-              Become a Member
+              Iniciar Consulta
             </button>
             <button
               onClick={() => setMenuOpen(!menuOpen)}
@@ -132,7 +132,7 @@ export default function Navbar() {
                   onClick={() => scrollTo('#membership')}
                   className="mt-4 px-8 py-3 border border-gold/60 text-gold text-[11px] tracking-[4px] uppercase font-sans hover:bg-gold hover:text-dark transition-all duration-300"
                 >
-                  Become a Member
+                  Iniciar Consulta
                 </button>
               </motion.li>
             </ul>

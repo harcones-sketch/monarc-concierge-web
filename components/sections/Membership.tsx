@@ -3,176 +3,202 @@
 import { useEffect, useRef } from 'react'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { Check } from 'lucide-react'
-import { cn } from '@/lib/utils'
+import { ArrowRight } from 'lucide-react'
 
-const tiers = [
+// ─── Los 3 servicios core ─────────────────────────────────────────────────────
+const services = [
   {
-    name: 'Essential',
-    price: '500',
-    period: '/mes',
-    description: 'La puerta de entrada a un mundo de privilegios curados.',
-    features: [
-      'Gestión de reservas en restaurantes premium',
-      'Acceso a nightlife VIP seleccionado',
-      'Traslados en vehículo de lujo',
-      'Concierge disponible 12h/día',
-      'Red de contactos en 5 destinos',
+    numeral: 'I',
+    name: 'Viaje Completo',
+    tagline: 'Tú decides el destino. Nosotros nos encargamos de todo.',
+    description:
+      'Desde el jet privado hasta la suite del hotel, el coche esperándote en pista y el itinerario curado al detalle. Un solo punto de contacto, cero logística para ti.',
+    includes: [
+      'Jets privados y empty legs',
+      'Alojamiento 5★ con upgrades garantizados',
+      'Vehículos de lujo y chófer privado',
+      'Itinerario y actividades a medida',
+      'Coordinación completa de A a Z',
     ],
-    cta: 'Apply Now',
-    featured: false,
   },
   {
-    name: 'Exclusive',
-    price: '1.500',
-    period: '/mes',
-    description: 'Para quienes saben que la experiencia lo es todo.',
-    features: [
-      'Todo lo incluido en Essential',
-      'Acceso a chárter de jets privados',
-      'Reserva de villas y superyates',
-      'Concierge personal 24/7',
-      'Acceso a eventos y galas privadas',
-      'Gestión de viajes internacionales',
-      'Seguridad y escoltas bajo demanda',
-      'Red de contactos en 15+ destinos',
+    numeral: 'II',
+    name: 'Reservas & Experiencias',
+    tagline: 'Lo que parece imposible, lo conseguimos.',
+    description:
+      'Restaurantes Michelin con lista de espera de meses, yates por un día, suites en hoteles sold-out, entradas a eventos privados. Servicios puntuales de alto valor, cuando los necesitas.',
+    includes: [
+      'Restaurantes de alta cocina y reservas imposibles',
+      'Charter náutico por el Mediterráneo',
+      'Acceso a eventos exclusivos y galas',
+      'Experiencias gastronómicas privadas',
+      'Gestión rápida · Propuesta en menos de 2h',
     ],
-    cta: 'Apply Now',
-    featured: true,
   },
   {
-    name: 'Private',
-    price: 'A medida',
-    period: '',
-    description: 'Una relación sin límites. Diseñada exclusivamente para ti.',
-    features: [
-      'Todo lo incluido en Exclusive',
-      'Gestor de cuenta dedicado exclusivo',
-      'Acceso ilimitado a toda la red MONARC',
-      'Gestión integral de propiedades',
-      'Contratación de artistas y entretenimiento',
-      'Seguridad privada 24/7',
-      'Asesoría de imagen y protocolo',
-      'Acceso a círculos privados y coleccionistas',
-      'Gestión de inversiones en experiencias',
-      'Todo lo que necesites, cuando lo necesites',
+    numeral: 'III',
+    name: 'Noche',
+    tagline: 'Acceso VIP donde otros no llegan.',
+    description:
+      'Madrid, Ibiza, Marbella, Mónaco. Los mejores clubs, las mejores mesas, sin esperas ni sorpresas. Nuestra red de relaciones trabaja para que tu noche sea perfecta.',
+    includes: [
+      'Mesas VIP en los clubs más exclusivos',
+      'Botella y servicio privado gestionados',
+      'Coordinación con RRPP · Entrada sin espera',
+      'Afterparties y eventos privados a medida',
+      'Disponible en Madrid, Ibiza, Marbella y Mónaco',
     ],
-    cta: 'Contact Us',
-    featured: false,
+  },
+]
+
+// ─── Pasos del proceso ────────────────────────────────────────────────────────
+const steps = [
+  {
+    num: '01',
+    title: 'Cuéntanos qué necesitas',
+    desc: 'Escríbenos por email o WhatsApp. Sin formularios, sin burocracia.',
+  },
+  {
+    num: '02',
+    title: 'Propuesta en menos de 2h',
+    desc: 'Te enviamos opciones personalizadas con todos los detalles.',
+  },
+  {
+    num: '03',
+    title: 'Nosotros lo ejecutamos',
+    desc: 'Gestionamos todo. Tú solo disfrutas.',
   },
 ]
 
 export default function Membership() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const headerRef = useRef<HTMLDivElement>(null)
-  const cardsRef = useRef<HTMLDivElement>(null)
+  const sectionRef  = useRef<HTMLElement>(null)
+  const headerRef   = useRef<HTMLDivElement>(null)
+  const cardsRef    = useRef<HTMLDivElement>(null)
+  const processRef  = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
-
     const ctx = gsap.context(() => {
       gsap.from(headerRef.current, {
-        y: 40, duration: 1, ease: 'power3.out',
+        y: 40, opacity: 0, duration: 1, ease: 'power3.out',
         scrollTrigger: { trigger: headerRef.current, start: 'top 85%' },
       })
       gsap.from(cardsRef.current!.children, {
-        y: 60, duration: 0.9, ease: 'power3.out', stagger: 0.15,
+        y: 60, opacity: 0, duration: 0.9, ease: 'power3.out', stagger: 0.15,
         scrollTrigger: { trigger: cardsRef.current, start: 'top 80%' },
       })
+      gsap.from(processRef.current!.children, {
+        y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', stagger: 0.12,
+        scrollTrigger: { trigger: processRef.current, start: 'top 85%' },
+      })
     }, sectionRef)
-
     return () => ctx.revert()
   }, [])
 
+  const scrollToContact = () => {
+    const el = document.querySelector('#contact')
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80
+      window.scrollTo({ top, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <section ref={sectionRef} id="membership" className="py-32 bg-[#EDE8DF] relative overflow-hidden">
-      {/* Subtle gold gradient top */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-transparent via-[#C8A86E]/30 to-transparent" />
+    <section ref={sectionRef} id="membership" className="py-32 bg-[#F5F1E8] relative overflow-hidden">
+      {/* Línea dorada decorativa */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-[#C8A86E]/40 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        {/* Header */}
-        <div ref={headerRef} className="text-center mb-20">
-          <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Acceso Exclusivo</p>
-          <h2 className="font-display text-5xl md:text-7xl text-[#1C1A17] mb-8">Membership</h2>
-          <div className="w-12 h-px bg-[#B8965A]/40 mx-auto mb-8" />
-          <p className="text-[#3D3530] max-w-xl mx-auto leading-relaxed">
-            Elige el nivel de servicio que define tu estilo de vida. Cada membresía es una invitación a lo extraordinario.
-          </p>
+
+        {/* ── Header ── */}
+        <div ref={headerRef} className="mb-20">
+          <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-6">Cómo Trabajamos</p>
+          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+            <h2 className="font-display text-5xl md:text-7xl text-[#1C1A17] leading-none">
+              Tres servicios.<br />
+              <span className="text-[#C8A86E]">Un solo contacto.</span>
+            </h2>
+            <p className="text-[#3D3530] max-w-sm leading-relaxed text-sm lg:pb-2">
+              Sin cuotas mensuales. Sin contratos. Cada servicio es una propuesta a medida — solo pagas por lo que disfrutas.
+            </p>
+          </div>
+          <div className="w-12 h-px bg-[#C8A86E]/40 mt-10" />
         </div>
 
-        {/* Cards */}
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {tiers.map((tier) => (
+        {/* ── 3 Servicios ── */}
+        <div ref={cardsRef} className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-28">
+          {services.map((s) => (
             <div
-              key={tier.name}
-              className={cn(
-                'relative p-10 flex flex-col transition-all duration-500',
-                tier.featured
-                  ? 'bg-[#1C1A17] border-t-2 border-[#B8965A] shadow-xl'
-                  : 'bg-[#F5F1E8] border border-[#B8965A]/15 hover:border-[#B8965A]/40 hover:shadow-md'
-              )}
+              key={s.numeral}
+              className="group bg-[#EDE8DF] border border-[#C8A86E]/10 hover:border-[#C8A86E]/30 p-10 flex flex-col transition-all duration-500 hover:shadow-sm"
             >
-              {tier.featured && (
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
-                  <span className="bg-[#B8965A] text-white text-[9px] tracking-[3px] uppercase px-4 py-1 font-medium">
-                    Most Popular
-                  </span>
-                </div>
-              )}
+              {/* Número romano */}
+              <span className="font-display text-6xl text-[#C8A86E]/20 group-hover:text-[#C8A86E]/35 transition-colors duration-500 leading-none mb-6 select-none">
+                {s.numeral}
+              </span>
 
-              <div className="mb-8">
-                <h3 className={cn(
-                  'font-display text-2xl mb-3',
-                  tier.featured ? 'text-[#C8A86E]' : 'text-[#1C1A17]'
-                )}>
-                  {tier.name}
-                </h3>
-                <p className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#4A4440]' : 'text-[#3D3530]')}>
-                  {tier.description}
-                </p>
-              </div>
+              {/* Nombre */}
+              <h3 className="font-display text-2xl text-[#1C1A17] mb-2">{s.name}</h3>
 
-              <div className="mb-10">
-                <span className={cn(
-                  'font-display text-5xl',
-                  tier.featured ? 'text-[#C8A86E]' : 'text-[#1C1A17]'
-                )}>
-                  {tier.price}
-                </span>
-                {tier.period && (
-                  <span className={cn('text-sm ml-1', tier.featured ? 'text-[#4A4440]' : 'text-[#3D3530]')}>
-                    {tier.period}
-                  </span>
-                )}
-              </div>
+              {/* Tagline */}
+              <p className="text-[10px] tracking-[2px] uppercase text-[#C8A86E] mb-5 font-sans">{s.tagline}</p>
 
-              <ul className="space-y-4 mb-10 flex-1">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3">
-                    <Check className="w-4 h-4 text-[#B8965A] mt-0.5 flex-shrink-0" />
-                    <span className={cn('text-sm leading-relaxed', tier.featured ? 'text-[#4A4440]' : 'text-[#3D3530]')}>
-                      {feature}
-                    </span>
+              {/* Línea */}
+              <div className="w-8 h-px bg-[#C8A86E]/30 mb-6" />
+
+              {/* Descripción */}
+              <p className="text-[#3D3530] text-sm leading-relaxed mb-8 flex-1">{s.description}</p>
+
+              {/* Lo que incluye */}
+              <ul className="space-y-2.5">
+                {s.includes.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5">
+                    <span className="mt-2 w-1 h-1 rounded-full bg-[#C8A86E] flex-shrink-0" />
+                    <span className="text-[#3D3530] text-xs leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
-
-              <a
-                href={`https://wa.me/34600000000?text=${encodeURIComponent(`Hola, me interesa la membresía ${tier.name} de MONARC Concierge. ¿Podéis darme más información?`)}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  'w-full py-4 text-[11px] tracking-[3px] uppercase transition-all duration-300 text-center block',
-                  tier.featured
-                    ? 'bg-[#B8965A] text-white hover:bg-[#9E7D46]'
-                    : 'border border-[#B8965A]/40 text-[#B8965A] hover:bg-[#B8965A] hover:text-white'
-                )}
-              >
-                {tier.cta}
-              </a>
             </div>
           ))}
         </div>
+
+        {/* ── Separador ── */}
+        <div className="w-full h-px bg-[#C8A86E]/15 mb-28" />
+
+        {/* ── El proceso ── */}
+        <div className="mb-20">
+          <p className="text-[10px] tracking-[6px] uppercase text-[#C8A86E] mb-16 text-center">El Proceso</p>
+          <div ref={processRef} className="grid grid-cols-1 md:grid-cols-3 gap-0">
+            {steps.map((step, i) => (
+              <div key={step.num} className="relative flex flex-col items-center text-center px-8">
+                {/* Número */}
+                <span className="font-display text-5xl text-[#C8A86E]/25 mb-4 leading-none">{step.num}</span>
+                <h4 className="font-display text-lg text-[#1C1A17] mb-3">{step.title}</h4>
+                <p className="text-[#3D3530] text-sm leading-relaxed">{step.desc}</p>
+
+                {/* Flecha entre pasos (desktop) */}
+                {i < steps.length - 1 && (
+                  <div className="hidden md:block absolute right-0 top-10 translate-x-1/2">
+                    <ArrowRight className="w-4 h-4 text-[#C8A86E]/40" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── CTA ── */}
+        <div className="text-center">
+          <button
+            onClick={scrollToContact}
+            className="group inline-flex items-center gap-3 bg-[#1C1A17] text-[#F5F2EC] px-12 py-5 text-[11px] tracking-[4px] uppercase font-sans hover:bg-[#B8965A] transition-colors duration-400"
+          >
+            Iniciar una consulta
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+          </button>
+          <p className="text-[#6A5E55] text-xs mt-4 tracking-wide">Respuesta garantizada en menos de 2 horas</p>
+        </div>
+
       </div>
     </section>
   )
