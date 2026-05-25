@@ -68,6 +68,12 @@ export const metadata: Metadata = {
       'Jets privados, yates, nightlife VIP y experiencias exclusivas. El concierge de lujo de referencia en España.',
     images: ['/og-image.jpg'],
   },
+  manifest: '/manifest.webmanifest',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'MONARC',
+  },
   robots: {
     index: true,
     follow: true,

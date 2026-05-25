@@ -24,24 +24,42 @@ const partners = [
   { name: 'Cipriani',          domain: 'cipriani.com' },
 ]
 
-/** Logo individual con fallback al nombre si la imagen no carga */
-function PartnerLogo({ name, domain }: { name: string; domain: string }) {
+/** Logo individual con fallback al nombre si Clearbit no carga */
+function PartnerLogo({
+  name,
+  domain,
+  size = 'desktop',
+}: {
+  name: string
+  domain: string
+  size?: 'desktop' | 'mobile'
+}) {
   const [failed, setFailed] = useState(false)
 
+  const containerClass =
+    size === 'mobile'
+      ? 'flex items-center justify-center w-full h-12 group'
+      : 'flex items-center justify-center w-28 h-10 flex-shrink-0 group'
+
+  const imgClass =
+    size === 'mobile'
+      ? 'object-contain max-h-7 w-auto max-w-[90px] opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500'
+      : 'object-contain max-h-8 w-auto opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500'
+
   return (
-    <div className="flex items-center justify-center w-28 h-10 flex-shrink-0 group">
+    <div className={containerClass}>
       {!failed ? (
         <Image
           src={`https://logo.clearbit.com/${domain}?size=120`}
           alt={name}
           width={90}
           height={36}
-          className="object-contain max-h-8 w-auto opacity-60 grayscale group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-500"
+          className={imgClass}
           onError={() => setFailed(true)}
           unoptimized
         />
       ) : (
-        <span className="font-sans text-[10px] tracking-[3px] text-[#1C1A17]/50 uppercase group-hover:text-[#1C1A17]/90 transition-colors duration-300 font-light whitespace-nowrap">
+        <span className="font-sans text-[10px] tracking-[2px] text-[#1C1A17]/60 uppercase group-hover:text-[#1C1A17]/90 transition-colors duration-300 font-light text-center leading-tight">
           {name}
         </span>
       )}
@@ -50,43 +68,57 @@ function PartnerLogo({ name, domain }: { name: string; domain: string }) {
 }
 
 export default function Partners() {
-  const sectionRef = useRef<HTMLElement>(null)
-  const headerRef  = useRef<HTMLDivElement>(null)
-  const row1Ref    = useRef<HTMLDivElement>(null)
-  const row2Ref    = useRef<HTMLDivElement>(null)
+  const sectionRef  = useRef<HTMLElement>(null)
+  const headerRef   = useRef<HTMLDivElement>(null)
+  const row1Ref     = useRef<HTMLDivElement>(null)
+  const row2Ref     = useRef<HTMLDivElement>(null)
+  const gridRef     = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
+
+    const isDesktop = window.innerWidth >= 768
+
     const ctx = gsap.context(() => {
       gsap.from(headerRef.current, {
         y: 30, opacity: 0, duration: 1, ease: 'power3.out',
         scrollTrigger: { trigger: headerRef.current, start: 'top 85%', once: true },
       })
 
-      // Fila 1 → se mueve a la izquierda
-      gsap.to(row1Ref.current, {
-        x: '-8%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      })
-
-      // Fila 2 → se mueve a la derecha
-      gsap.to(row2Ref.current, {
-        x: '8%',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top bottom',
-          end: 'bottom top',
-          scrub: 1,
-        },
-      })
+      if (isDesktop) {
+        // Fila 1 → se mueve a la izquierda
+        gsap.to(row1Ref.current, {
+          x: '-8%',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        })
+        // Fila 2 → se mueve a la derecha
+        gsap.to(row2Ref.current, {
+          x: '8%',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1,
+          },
+        })
+      } else {
+        // En móvil: fade-in simple del grid
+        if (gridRef.current) {
+          gsap.from(gridRef.current.children, {
+            opacity: 0, y: 20, duration: 0.6, stagger: 0.05, ease: 'power2.out',
+            scrollTrigger: { trigger: gridRef.current, start: 'top 85%', once: true },
+          })
+        }
+      }
     }, sectionRef)
+
     return () => ctx.revert()
   }, [])
 
@@ -107,29 +139,41 @@ export default function Partners() {
         </div>
       </div>
 
-      <div className="w-full h-px bg-[#C8A86E]/20 mb-14" />
+      <div className="w-full h-px bg-[#C8A86E]/20 mb-12" />
 
-      {/* Fila 1 */}
-      <div ref={row1Ref} className="flex items-center gap-12 mb-8 px-8 whitespace-nowrap">
-        {[...row1, ...row1].map((p, i) => (
-          <div key={`r1-${i}`} className="flex items-center gap-12 flex-shrink-0">
-            <PartnerLogo name={p.name} domain={p.domain} />
-            <span className="text-[#C8A86E]/20 text-xs flex-shrink-0">◆</span>
-          </div>
-        ))}
+      {/* ── MÓVIL: grid 4 columnas ── */}
+      <div ref={gridRef} className="md:hidden px-6 mb-12">
+        <div className="grid grid-cols-4 gap-x-2 gap-y-6">
+          {partners.map((p) => (
+            <PartnerLogo key={p.name} name={p.name} domain={p.domain} size="mobile" />
+          ))}
+        </div>
       </div>
 
-      {/* Fila 2 */}
-      <div ref={row2Ref} className="flex items-center gap-12 px-8 whitespace-nowrap">
-        {[...row2, ...row2].map((p, i) => (
-          <div key={`r2-${i}`} className="flex items-center gap-12 flex-shrink-0">
-            <PartnerLogo name={p.name} domain={p.domain} />
-            <span className="text-[#C8A86E]/20 text-xs flex-shrink-0">◆</span>
-          </div>
-        ))}
+      {/* ── DESKTOP: filas con parallax ── */}
+      <div className="hidden md:block">
+        {/* Fila 1 */}
+        <div ref={row1Ref} className="flex items-center gap-12 mb-8 px-8 whitespace-nowrap">
+          {[...row1, ...row1].map((p, i) => (
+            <div key={`r1-${i}`} className="flex items-center gap-12 flex-shrink-0">
+              <PartnerLogo name={p.name} domain={p.domain} />
+              <span className="text-[#C8A86E]/20 text-xs flex-shrink-0">◆</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Fila 2 */}
+        <div ref={row2Ref} className="flex items-center gap-12 px-8 whitespace-nowrap">
+          {[...row2, ...row2].map((p, i) => (
+            <div key={`r2-${i}`} className="flex items-center gap-12 flex-shrink-0">
+              <PartnerLogo name={p.name} domain={p.domain} />
+              <span className="text-[#C8A86E]/20 text-xs flex-shrink-0">◆</span>
+            </div>
+          ))}
+        </div>
       </div>
 
-      <div className="w-full h-px bg-[#C8A86E]/20 mt-14" />
+      <div className="w-full h-px bg-[#C8A86E]/20 mt-12" />
     </section>
   )
 }
