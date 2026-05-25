@@ -72,7 +72,7 @@ export default function Partners() {
   const headerRef   = useRef<HTMLDivElement>(null)
   const row1Ref     = useRef<HTMLDivElement>(null)
   const row2Ref     = useRef<HTMLDivElement>(null)
-  const gridRef     = useRef<HTMLDivElement>(null)
+  const gridRef     = useRef<HTMLDivElement>(null) // eslint-disable-line @typescript-eslint/no-unused-vars
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger)
@@ -108,15 +108,8 @@ export default function Partners() {
             scrub: 1,
           },
         })
-      } else {
-        // En móvil: fade-in simple del grid
-        if (gridRef.current) {
-          gsap.from(gridRef.current.children, {
-            opacity: 0, y: 20, duration: 0.6, stagger: 0.05, ease: 'power2.out',
-            scrollTrigger: { trigger: gridRef.current, start: 'top 85%', once: true },
-          })
-        }
       }
+      // En móvil no animamos el grid — aparece directamente (evita quedarse en opacity:0)
     }, sectionRef)
 
     return () => ctx.revert()
@@ -142,7 +135,7 @@ export default function Partners() {
       <div className="w-full h-px bg-[#C8A86E]/20 mb-12" />
 
       {/* ── MÓVIL: grid 4 columnas ── */}
-      <div ref={gridRef} className="md:hidden px-6 mb-12">
+      <div className="md:hidden px-6 mb-12">
         <div className="grid grid-cols-4 gap-x-2 gap-y-6">
           {partners.map((p) => (
             <PartnerLogo key={p.name} name={p.name} domain={p.domain} size="mobile" />
