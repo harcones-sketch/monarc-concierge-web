@@ -80,16 +80,16 @@ export default function Membership() {
     gsap.registerPlugin(ScrollTrigger)
     const ctx = gsap.context(() => {
       gsap.from(headerRef.current, {
-        y: 40, opacity: 0, duration: 1, ease: 'power3.out',
-        scrollTrigger: { trigger: headerRef.current, start: 'top 85%' },
+        y: 40, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: headerRef.current, start: 'top 90%', once: true },
       })
       gsap.from(cardsRef.current!.children, {
-        y: 60, opacity: 0, duration: 0.9, ease: 'power3.out', stagger: 0.15,
-        scrollTrigger: { trigger: cardsRef.current, start: 'top 80%' },
+        y: 50, duration: 0.9, ease: 'power3.out', stagger: 0.12,
+        scrollTrigger: { trigger: cardsRef.current, start: 'top 90%', once: true },
       })
       gsap.from(processRef.current!.children, {
-        y: 30, opacity: 0, duration: 0.7, ease: 'power3.out', stagger: 0.12,
-        scrollTrigger: { trigger: processRef.current, start: 'top 85%' },
+        y: 30, duration: 0.7, ease: 'power3.out', stagger: 0.1,
+        scrollTrigger: { trigger: processRef.current, start: 'top 90%', once: true },
       })
     }, sectionRef)
     return () => ctx.revert()

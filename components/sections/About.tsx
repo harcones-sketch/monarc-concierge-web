@@ -40,10 +40,10 @@ export default function About() {
       gsap.from(textRef.current, {
         scrollTrigger: {
           trigger: textRef.current,
-          start: 'top 80%',
+          start: 'top 90%', once: true,
         },
         x: -50,
-        opacity: 0,
+
         duration: 1,
         ease: 'power3.out',
       })
@@ -52,10 +52,10 @@ export default function About() {
       gsap.from(imageRef.current, {
         scrollTrigger: {
           trigger: imageRef.current,
-          start: 'top 80%',
+          start: 'top 90%', once: true,
         },
         x: 50,
-        opacity: 0,
+
         duration: 1,
         ease: 'power3.out',
       })

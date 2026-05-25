@@ -34,14 +34,14 @@ export default function Services() {
     const ctx = gsap.context(() => {
       // Header reveal
       gsap.from(headerRef.current, {
-        y: 40, opacity: 0, duration: 1, ease: 'power3.out',
+        y: 40, duration: 1, ease: 'power3.out',
         scrollTrigger: { trigger: headerRef.current, start: 'top 88%', once: true },
       })
 
       // Cards stagger
       const cards = gsap.utils.toArray<HTMLElement>(gridRef.current!.children)
       gsap.from(cards, {
-        y: 50, opacity: 0, duration: 0.7, ease: 'power3.out',
+        y: 50, duration: 0.7, ease: 'power3.out',
         stagger: { amount: 0.8, from: 'start' },
         scrollTrigger: { trigger: gridRef.current, start: 'top 85%', once: true },
       })

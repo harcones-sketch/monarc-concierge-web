@@ -81,7 +81,7 @@ export default function Partners() {
 
     const ctx = gsap.context(() => {
       gsap.from(headerRef.current, {
-        y: 30, opacity: 0, duration: 1, ease: 'power3.out',
+        y: 30, duration: 1, ease: 'power3.out',
         scrollTrigger: { trigger: headerRef.current, start: 'top 85%', once: true },
       })
 
