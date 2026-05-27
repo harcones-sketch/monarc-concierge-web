@@ -40,33 +40,24 @@ export const metadata: Metadata = {
     'luxury travel Spain',
   ],
   authors: [{ name: 'MONARC Concierge' }],
-  metadataBase: new URL('https://monarcconcierge.com'),
+  metadataBase: new URL('https://www.monarcconcierge.com'),
   alternates: {
-    canonical: 'https://monarcconcierge.com',
+    canonical: 'https://www.monarcconcierge.com',
   },
   openGraph: {
     title: 'MONARC Concierge — Luxury Concierge Madrid | Life, Curated.',
     description:
       'Concierge de lujo en Madrid. Jets privados, yates, nightlife VIP, reservas imposibles y experiencias únicas para artistas, ejecutivos y HNWI.',
     type: 'website',
-    url: 'https://monarcconcierge.com',
+    url: 'https://www.monarcconcierge.com',
     locale: 'es_ES',
     siteName: 'MONARC Concierge',
-    images: [
-      {
-        url: 'https://www.monarcconcierge.com/opengraph-image',
-        width: 1200,
-        height: 630,
-        alt: 'MONARC Concierge — Luxury Concierge Madrid | Life, Curated.',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MONARC Concierge — Luxury Concierge Madrid',
     description:
       'Jets privados, yates, nightlife VIP y experiencias exclusivas. El concierge de lujo de referencia en España.',
-    images: ['https://www.monarcconcierge.com/opengraph-image'],
   },
   manifest: '/manifest.webmanifest',
   appleWebApp: {
