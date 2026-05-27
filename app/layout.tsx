@@ -52,12 +52,21 @@ export const metadata: Metadata = {
     url: 'https://monarcconcierge.com',
     locale: 'es_ES',
     siteName: 'MONARC Concierge',
+    images: [
+      {
+        url: 'https://monarcconcierge.com/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'MONARC Concierge — Luxury Concierge Madrid | Life, Curated.',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MONARC Concierge — Luxury Concierge Madrid',
     description:
       'Jets privados, yates, nightlife VIP y experiencias exclusivas. El concierge de lujo de referencia en España.',
+    images: ['https://monarcconcierge.com/opengraph-image'],
   },
   manifest: '/manifest.webmanifest',
   appleWebApp: {
