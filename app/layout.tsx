@@ -52,21 +52,12 @@ export const metadata: Metadata = {
     url: 'https://monarcconcierge.com',
     locale: 'es_ES',
     siteName: 'MONARC Concierge',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'MONARC Concierge — Luxury Concierge Madrid',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'MONARC Concierge — Luxury Concierge Madrid',
     description:
       'Jets privados, yates, nightlife VIP y experiencias exclusivas. El concierge de lujo de referencia en España.',
-    images: ['/og-image.jpg'],
   },
   manifest: '/manifest.webmanifest',
   appleWebApp: {
@@ -110,6 +101,7 @@ const jsonLd = {
     availableLanguage: ['Spanish', 'English'],
   },
   sameAs: ['https://www.instagram.com/monarcconcierge'],
+
 }
 
 export default function RootLayout({

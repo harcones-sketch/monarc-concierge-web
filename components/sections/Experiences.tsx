@@ -142,7 +142,7 @@ const experiences: Experience[] = [
 ]
 
 // ─── Modal ─────────────────────────────────────────────────────────────────────
-const CONTACT_EMAIL = 'hello@monarconcierge.com'
+const CONTACT_EMAIL = 'monarcvipconcierge@gmail.com'
 const WHATSAPP_NUMBER = '34600000000' // reemplazar por número real
 
 function ExperienceModal({

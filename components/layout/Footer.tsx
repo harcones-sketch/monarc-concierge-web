@@ -19,9 +19,9 @@ const footerLinks = {
     'Miami',
   ],
   Contacto: [
-    'info@monarconcierge.com',
+    'monarcvipconcierge@gmail.com',
     '+34 600 000 000',
-    '@monarconcierge',
+    '@monarcconcierge',
     'Madrid, España',
   ],
 }
@@ -47,7 +47,7 @@ export default function Footer() {
             {/* Social */}
             <div className="flex items-center gap-3">
               <a
-                href="https://instagram.com/monarconcierge"
+                href="https://instagram.com/monarcconcierge"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 flex items-center justify-center border border-[#B8965A]/30 hover:border-gold/40 hover:text-gold text-muted transition-all duration-300"
