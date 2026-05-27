@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: 'MONARC Concierge',
     images: [
       {
-        url: 'https://monarcconcierge.com/opengraph-image',
+        url: 'https://www.monarcconcierge.com/opengraph-image',
         width: 1200,
         height: 630,
         alt: 'MONARC Concierge — Luxury Concierge Madrid | Life, Curated.',
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: 'MONARC Concierge — Luxury Concierge Madrid',
     description:
       'Jets privados, yates, nightlife VIP y experiencias exclusivas. El concierge de lujo de referencia en España.',
-    images: ['https://monarcconcierge.com/opengraph-image'],
+    images: ['https://www.monarcconcierge.com/opengraph-image'],
   },
   manifest: '/manifest.webmanifest',
   appleWebApp: {
